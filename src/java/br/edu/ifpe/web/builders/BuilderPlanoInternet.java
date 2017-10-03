@@ -3,14 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.ifpe.negocio.builders;
-
-import br.edu.ifpe.negocio.PlanoInternet;
+package br.edu.ifpe.web.builders;
 
 /**
  *
  * @author esdra
  */
+import br.edu.ifpe.negocio.PlanoInternet;
+import java.util.Date;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
+
+@ManagedBean(name = "bPlanoInternet")
+@RequestScoped
+
 public class BuilderPlanoInternet {
 
     private int id;
@@ -18,7 +24,7 @@ public class BuilderPlanoInternet {
     private String descrição;
     private double valor;
 
-    public BuilderPlanoInternet(int id, String nome, String descrição, double valor) {
+    public BuilderPlanoInternet(String nome, String descrição, double valor, int id) {
         this.id = id;
         this.nome = nome;
         this.descrição = descrição;
@@ -26,6 +32,7 @@ public class BuilderPlanoInternet {
     }
 
     public BuilderPlanoInternet() {
+        
     }
 
     public int getId() {
@@ -63,6 +70,5 @@ public class BuilderPlanoInternet {
     public PlanoInternet builderPlanoInternet(){
         return new PlanoInternet(nome, descrição, valor, id);
     }
-            
     
 }

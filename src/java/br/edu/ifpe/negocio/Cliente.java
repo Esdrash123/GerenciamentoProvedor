@@ -33,9 +33,7 @@ public class Cliente {
 
     }
 
-    public Cliente(int id, String nome, int CPFCNPJ, String login, String senha, Date vencimento) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+  
 
     public int getId() {
         return id;

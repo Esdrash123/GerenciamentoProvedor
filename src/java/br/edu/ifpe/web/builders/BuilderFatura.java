@@ -3,10 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.ifpe.negocio.builders;
+package br.edu.ifpe.web.builders;
 
 import java.util.Date;
+
 import br.edu.ifpe.negocio.Fatura;
+import java.util.Date;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
+
+@ManagedBean(name = "bFatura")
+@RequestScoped
 
 /**
  *
@@ -24,9 +31,6 @@ public class BuilderFatura {
     private Date DataPagamento;
     private Boolean Status;
 
-    public BuilderFatura() {
-    }
-
     public BuilderFatura(String nomeDoCliente, int CPFDoCliente, String nomeDoPlano, double valor, double valorMulta, double valorJurosPorDia, Date vencimento, Date DataPagamento, Boolean Status) {
         this.nomeDoCliente = nomeDoCliente;
         this.CPFDoCliente = CPFDoCliente;
@@ -37,6 +41,10 @@ public class BuilderFatura {
         this.vencimento = vencimento;
         this.DataPagamento = DataPagamento;
         this.Status = Status;
+    }
+
+    public BuilderFatura() {
+
     }
 
     public String getNomeDoCliente() {

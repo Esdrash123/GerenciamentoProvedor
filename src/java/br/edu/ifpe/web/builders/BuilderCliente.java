@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.ifpe.negocio.builders;
+package br.edu.ifpe.web.builders;
 
 /**
  *
@@ -14,6 +14,9 @@ import java.util.Date;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
+@ManagedBean(name = "bCliete")
+@RequestScoped
+
 public class BuilderCliente {
 
     private int id;
@@ -22,6 +25,15 @@ public class BuilderCliente {
     private String login;
     private String senha;
     private Date vencimento;
+
+    public BuilderCliente(int id, String nome, int CPFCNPJ, String login, String senha, Date vencimento) {
+        this.id = id;
+        this.nome = nome;
+        this.CPFCNPJ = CPFCNPJ;
+        this.login = login;
+        this.senha = senha;
+        this.vencimento = vencimento;
+    }
 
     public BuilderCliente() {
     }
@@ -42,10 +54,6 @@ public class BuilderCliente {
         this.nome = nome;
     }
 
-    public String getLogin() {
-        return login;
-    }
-
     public int getCPFCNPJ() {
         return CPFCNPJ;
     }
@@ -54,12 +62,8 @@ public class BuilderCliente {
         this.CPFCNPJ = CPFCNPJ;
     }
 
-    public Date getVencimento() {
-        return vencimento;
-    }
-
-    public void setVencimento(Date vencimento) {
-        this.vencimento = vencimento;
+    public String getLogin() {
+        return login;
     }
 
     public void setLogin(String login) {
@@ -74,8 +78,16 @@ public class BuilderCliente {
         this.senha = senha;
     }
 
-    public Cliente builderCliente() {
-        return new Cliente(id, nome, CPFCNPJ, login, senha, vencimento);
+    public Date getVencimento() {
+        return vencimento;
     }
 
+    public void setVencimento(Date vencimento) {
+        this.vencimento = vencimento;
+    }
+
+    public Cliente builderCliente(){
+        return new Cliente(nome, CPFCNPJ, login, senha, vencimento, id);
+    }
+    
 }

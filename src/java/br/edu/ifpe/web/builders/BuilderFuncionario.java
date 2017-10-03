@@ -3,9 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.ifpe.negocio.builders;
+package br.edu.ifpe.web.builders;
 
 import br.edu.ifpe.negocio.Funcionario;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
+
+@ManagedBean(name = "bFuncionario")
+@RequestScoped
 
 /**
  *
@@ -18,7 +23,7 @@ public class BuilderFuncionario {
     private String login;
     private String senha;
 
-    public BuilderFuncionario(int id, String nome, String login, String senha) {
+    public BuilderFuncionario(String nome, String login, String senha, int id) {
         this.id = id;
         this.nome = nome;
         this.login = login;
@@ -26,6 +31,7 @@ public class BuilderFuncionario {
     }
 
     public BuilderFuncionario() {
+       
     }
 
     public int getId() {
@@ -61,7 +67,6 @@ public class BuilderFuncionario {
     }
 
     public Funcionario builderFuncionario(){
-        return new Funcionario(nome, login, senha, id);
-    }
-    
+    return new Funcionario(nome, login, senha, id);
+}
 }
