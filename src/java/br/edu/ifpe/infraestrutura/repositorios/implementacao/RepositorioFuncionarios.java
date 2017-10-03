@@ -6,7 +6,7 @@
 package br.edu.ifpe.infraestrutura.repositorios.implementacao;
 
 import br.edu.ifpe.infraestrutura.repositorios.comportamento.RepositorioGenerico;
-import br.edu.ifpe.negocios.Funcionario;
+import br.edu.ifpe.negocio.Funcionario;
 import java.util.ArrayList;
 import java.util.List;
 

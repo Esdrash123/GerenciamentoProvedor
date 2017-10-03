@@ -7,10 +7,10 @@ package br.edu.ifpe.fachada;
 
 import br.edu.ifpe.infraestrutura.repositorios.comportamento.RepositorioGenerico;
 import br.edu.ifpe.infraestrutura.repositorios.implementacao.FabricaRepositorios;
-import br.edu.ifpe.negocios.Cliente;
-import br.edu.ifpe.negocios.Fatura;
-import br.edu.ifpe.negocios.Funcionario;
-import br.edu.ifpe.negocios.PlanoInternet;
+import br.edu.ifpe.negocio.Cliente;
+import br.edu.ifpe.negocio.Fatura;
+import br.edu.ifpe.negocio.Funcionario;
+import br.edu.ifpe.negocio.PlanoInternet;
 import java.util.List;
 
 /**

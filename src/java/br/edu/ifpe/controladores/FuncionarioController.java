@@ -7,7 +7,7 @@ package br.edu.ifpe.controladores;
 
 import br.edu.ifpe.infraestrutura.repositorios.comportamento.RepositorioGenerico;
 import br.edu.ifpe.infraestrutura.repositorios.implementacao.RepositorioFuncionarios;
-import br.edu.ifpe.negocios.Funcionario;
+import br.edu.ifpe.negocio.Funcionario;
 import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;

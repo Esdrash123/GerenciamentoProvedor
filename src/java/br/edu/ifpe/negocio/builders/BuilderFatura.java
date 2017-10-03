@@ -3,27 +3,31 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.ifpe.negocios;
+package br.edu.ifpe.negocio.builders;
 
 import java.util.Date;
+import br.edu.ifpe.negocio.Fatura;
 
 /**
  *
  * @author esdra
  */
-public class Fatura {
+public class BuilderFatura {
 
-    String nomeDoCliente;
-    int CPFDoCliente;
-    String nomeDoPlano;
-    double valor;
-    double valorMulta;
-    double valorJurosPorDia;
-    Date vencimento;
-    Date DataPagamento;
-    Boolean Status;
+    private String nomeDoCliente;
+    private int CPFDoCliente;
+    private String nomeDoPlano;
+    private double valor;
+    private double valorMulta;
+    private double valorJurosPorDia;
+    private Date vencimento;
+    private Date DataPagamento;
+    private Boolean Status;
 
-    public Fatura(String nomeDoCliente, int CPFDoCliente, String nomeDoPlano, double valor, double valorMulta, double valorJurosPorDia, Date vencimento, Date DataPagamento, Boolean Status) {
+    public BuilderFatura() {
+    }
+
+    public BuilderFatura(String nomeDoCliente, int CPFDoCliente, String nomeDoPlano, double valor, double valorMulta, double valorJurosPorDia, Date vencimento, Date DataPagamento, Boolean Status) {
         this.nomeDoCliente = nomeDoCliente;
         this.CPFDoCliente = CPFDoCliente;
         this.nomeDoPlano = nomeDoPlano;
@@ -33,10 +37,6 @@ public class Fatura {
         this.vencimento = vencimento;
         this.DataPagamento = DataPagamento;
         this.Status = Status;
-    }
-
-    public Fatura() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public String getNomeDoCliente() {
@@ -111,6 +111,7 @@ public class Fatura {
         this.Status = Status;
     }
 
-
-
+    public Fatura builderFatura() {
+        return new Fatura(nomeDoCliente, CPFDoCliente, nomeDoPlano, valor, valorMulta, valorJurosPorDia, vencimento, DataPagamento, Status);
+    }
 }

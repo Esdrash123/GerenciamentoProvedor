@@ -3,34 +3,28 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.ifpe.negocios;
-
-import java.util.Date;
+package br.edu.ifpe.negocio;
 
 /**
  *
  * @author esdra
  */
-public class Cliente {
+public class Funcionario {
 
-    int id;
-    String nome;
-    int CPFCNPJ;
-    String login;
-    String senha;
-    Date vencimento;
+    private int id;
+    private String nome;
+    private String login;
+    private String senha;
 
-    public Cliente(String nome, int CPFCNPJ, String login, String senha, Date vencimento, int id) {
+    public Funcionario(String nome, String login, String senha, int id) {
         this.id = id;
         this.nome = nome;
-        this.CPFCNPJ = CPFCNPJ;
         this.login = login;
         this.senha = senha;
-        this.vencimento = vencimento;
     }
 
-    public Cliente() {
-        
+    public Funcionario() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public int getId() {
@@ -41,22 +35,12 @@ public class Cliente {
         this.id = id;
     }
 
-    
-    
     public String getNome() {
         return nome;
     }
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public int getCPFCNPJ() {
-        return CPFCNPJ;
-    }
-
-    public void setCPFCNPJ(int CPFCNPJ) {
-        this.CPFCNPJ = CPFCNPJ;
     }
 
     public String getLogin() {
@@ -73,14 +57,6 @@ public class Cliente {
 
     public void setSenha(String senha) {
         this.senha = senha;
-    }
-
-    public Date getVencimento() {
-        return vencimento;
-    }
-
-    public void setVencimento(Date vencimento) {
-        this.vencimento = vencimento;
     }
 
 }

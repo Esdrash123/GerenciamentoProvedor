@@ -7,7 +7,7 @@ package br.edu.ifpe.controladores;
 
 import br.edu.ifpe.infraestrutura.repositorios.comportamento.RepositorioGenerico;
 import br.edu.ifpe.infraestrutura.repositorios.implementacao.RepositorioPlanoInternet;
-import br.edu.ifpe.negocios.PlanoInternet;
+import br.edu.ifpe.negocio.PlanoInternet;
 import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;

@@ -3,28 +3,29 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.ifpe.negocios;
+package br.edu.ifpe.negocio.builders;
+
+import br.edu.ifpe.negocio.PlanoInternet;
 
 /**
  *
  * @author esdra
  */
-public class PlanoInternet {
+public class BuilderPlanoInternet {
 
-    int id;
-    String nome;
-    String descrição;
-    double valor;
+    private int id;
+    private String nome;
+    private String descrição;
+    private double valor;
 
-    public PlanoInternet(String nome, String descrição, double valor, int id) {
+    public BuilderPlanoInternet(int id, String nome, String descrição, double valor) {
         this.id = id;
         this.nome = nome;
         this.descrição = descrição;
         this.valor = valor;
     }
 
-    public PlanoInternet() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public BuilderPlanoInternet() {
     }
 
     public int getId() {
@@ -59,5 +60,9 @@ public class PlanoInternet {
         this.valor = valor;
     }
 
+    public PlanoInternet builderPlanoInternet(){
+        return new PlanoInternet(nome, descrição, valor, id);
+    }
+            
     
 }
