@@ -11,18 +11,26 @@ package br.edu.ifpe.negocios;
  */
 public class PlanoInternet {
 
+    int id;
     String nome;
     String descrição;
     double valor;
 
-    public PlanoInternet(String nome, String descrição, double valor) {
+    public PlanoInternet(String nome, String descrição, double valor, int id) {
+        this.id = id;
         this.nome = nome;
         this.descrição = descrição;
         this.valor = valor;
     }
 
-    
-    
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getNome() {
         return nome;
     }

@@ -11,14 +11,24 @@ package br.edu.ifpe.negocios;
  */
 public class Funcionario {
 
+    int id;
     String nome;
     String login;
     String senha;
 
-    public Funcionario(String nome, String login, String senha) {
+    public Funcionario(String nome, String login, String senha, int id) {
+        this.id = id;
         this.nome = nome;
         this.login = login;
         this.senha = senha;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNome() {

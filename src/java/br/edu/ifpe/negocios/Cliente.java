@@ -13,13 +13,15 @@ import java.util.Date;
  */
 public class Cliente {
 
+    int id;
     String nome;
     int CPFCNPJ;
     String login;
     String senha;
     Date vencimento;
 
-    public Cliente(String nome, int CPFCNPJ, String login, String senha, Date vencimento) {
+    public Cliente(String nome, int CPFCNPJ, String login, String senha, Date vencimento, int id) {
+        this.id = id;
         this.nome = nome;
         this.CPFCNPJ = CPFCNPJ;
         this.login = login;
@@ -27,6 +29,20 @@ public class Cliente {
         this.vencimento = vencimento;
     }
 
+    public Cliente() {
+        
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    
+    
     public String getNome() {
         return nome;
     }
