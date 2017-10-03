@@ -24,7 +24,7 @@ public class FaturaController {
     Fatura fatura = new Fatura();
     private RepositorioGenerico<Fatura,Integer> repositorioFatura = new RepositorioFatura();
     
-    private Fatura selectedCliente;
+    private Fatura selectedFatura;
     
     
     public String inserir(Fatura fatura){
@@ -48,29 +48,29 @@ public class FaturaController {
         return this.repositorioFatura.recuperar(id);
     }
     
-    public void deletar(Fatura cliente){
-        this.repositorioFatura.deletar(cliente);
+    public void deletar(Fatura fatura){
+        this.repositorioFatura.deletar(fatura);
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Fatura deletada com sucesso!"));
  
     }
     
-    public List<Fatura> recuperarTodosClientes(){
+    public List<Fatura> recuperarTodosFaturas(){
         return this.repositorioFatura.recuperarTodos();
     }
 
-    public Fatura getSelectedCliente() {
-        return selectedCliente;
+    public Fatura getSelectedFatura() {
+        return selectedFatura;
     }
 
-    public void setSelectedCliente(Fatura selectedCliente) {
-        this.selectedCliente = selectedCliente;
+    public void setSelectedFatura(Fatura selectedCliente) {
+        this.selectedFatura = selectedFatura;
     }
 
-    public Fatura getCliente() {
+    public Fatura getFatura() {
         return fatura;
     }
 
-    public void setCliente(Fatura cliente) {
-        this.fatura = cliente;
+    public void setCliente(Fatura fatura) {
+        this.fatura = fatura;
     }
 }
