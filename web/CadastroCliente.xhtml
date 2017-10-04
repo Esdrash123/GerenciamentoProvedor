@@ -19,42 +19,42 @@ and open the template in the editor.
             <p:growl id="dro" life="3000"/>
             <p:fieldset legend="Cadastro de Cliente">
                 <p:messages/>
-                
+
                 <p:panelGrid columns="3">
-                    
+
                     <h:outputText value="Nome*:"/>
                     <p:inputText id="txtNome" value="#{bCliente.nome}"
                                  required="true" requiredMessage="O campo Nome é obrigatório"/>
                     <p:message for="txtNome"/>
-                    
+
                     <h:outputText value="Login*:"/>
                     <p:inputText value="#{bCliente.login}" id="txtlogin"
                                  required="true" requiredMessage="O campo Login é obrigatório"/>
                     <p:message for="txtlogin"/>
-                    
+
                     <h:outputText value="Senha:"/>
                     <p:inputText value="#{bCliente.senha}"/>
                     <h:outputText/>
-                    
+
                     <h:outputText value="Id:"/>
                     <p:inputText value="#{bCliente.id}"/>
                     <h:outputText/>
-                    
+
                     <h:outputText value="Vencimento"/>
                     <p:inputText value="#{bCliete.vencimento}" id="txtVencimento"
                                  required="true" requiredMessage="O campo Vencimento é obrigatório"/>
                     <p:message for="txtVencimento"/>
-                    
+
                     <h:outputText value="CPF/CNPJ*:"/>
                     <p:inputText value="#{bCliente.CPFCNPJ}" id="txtCPFCNPJ"
                                  required="true" requiredMessage="O campo CPFCNPJ é obrigatório"/>
                     <p:message for="txtCPFCNPJ"/>
-                    
+
                 </p:panelGrid>
                 <p:commandButton value="Cadastrar"
                                  oncomplete="PF('widDialCliente').show()"/>
             </p:fieldset>
-            
+
             <p:confirmDialog id="dialCliente" message="Deseja realmente cadastrar este Cliente?"
                              visible="false" widgetVar="widDialCliente" showEffect="fade">
                 <f:facet name="header">
@@ -65,13 +65,13 @@ and open the template in the editor.
                                  oncomplete="PF('widDialCliente').hide()" update="@form"/>
                 <p:commandButton value="não" oncomplete="PF('widDialCliente').hide()"/>
             </p:confirmDialog>
-            
+
             <p:dialog id="dialConfirma" visible="false" resizable="false" modal="true"
                       widgetVar="widDialConfirm">
                 <h:outputText value="cliente cadastrado"/><br/>
                 <p:commandButton value="ok" oncomplete="PF('widDialConfirm').hide()"/>
             </p:dialog>
-            
+
         </h:form>
     </h:body>
 </html>
