@@ -14,7 +14,7 @@ import java.util.Date;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
-@ManagedBean(name = "bCliete")
+@ManagedBean(name = "bCliente")
 @RequestScoped
 
 public class BuilderCliente {
