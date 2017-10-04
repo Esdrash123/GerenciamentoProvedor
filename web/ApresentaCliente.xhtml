@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Clientes Cadastrados</title>
+    </h:head>
+    <h:body>
+        <ui:include src="menu.xhtml"/>
+        
+        <p:growl id="gro" life="3000"/>
+        
+        <h:form id="formApresentaCliente">
+            <p:dataTable id="tabelaCliente" var="item" value="#{clienteController.recuperarTodosClientes()}"
+                         rowKey="#{item.id}" selectionMode="single" selection="#{clienteController.selectedCliente}" emptyMessage="Não há clientes cadastrados">
+                 
+                <f:facet name="header">
+                   Clientes Cadastrados:
+                </f:facet>
+                
+                <p:column headerText="Id">
+                    <h:outputText value="#{item.id}"/>
+                </p:column>
+                
+                <p:column headerText="Nome">
+                    <h:outputText value="#{item.nome}"/>
+                </p:column>
+                
+                <p:column headerText="Telefone" >
+                    <h:outputText value="#{item.telefone}"/>
+                </p:column>
+                
+                 <p:column headerText="Login" >
+                     <h:outputText value="#{item.login}"/>
+                </p:column>
+                
+                <p:column headerText="Senha" >
+                     <h:outputText value="#{item.senha}"/>
+                </p:column>
+                 
+            </p:dataTable>
+            
+            <center>
+            <p:commandButton icon="ui-icon-search" oncomplete="PF('widDialVisualizaCliente').show()"
+                             update='dialVisualizaCliente'/>
+           
+            <p:commandButton icon="ui-icon-transfer-e-w" action='alteraCliente.xhtml'/>
+            <p:commandButton icon="ui-icon-closethick" oncomplete="PF('widDialCliente').show()"/>
+            </center>
+               
+            <p:confirmDialog id="dialCliente" message="DESEJA DELETAR O CLIENTE?" 
+                             visible="false" widgetVar="widDialCliente" showEffect="fade">
+                <f:facet name="header">
+                    Atenção!
+                </f:facet>  
+                <p:commandButton value="Sim" 
+                                 action="#{clienteController.deletar(clienteController.selectedCliente)}"
+                                 oncomplete="PF('widDialCliente').hide()" update="@form"/>
+                <p:commandButton value="Não" oncomplete="PF('widDialCliente').hide()"/>
+            </p:confirmDialog>
+            
+          
+                                       
+            <p:dialog id="dialVisualizaCliente" visible="false" resizable="false"
+                      modal="true" widgetVar="widDialVisualizaCliente">
+                   <p:panelGrid columns="2">
+                 <h:outputText value="Id:"/>
+                 <h:outputText value="#{clienteController.selectedCliente.id}"/>
+                  <h:outputText value="Nome:"/>
+                  <h:outputText value="#{clienteController.selectedCliente.nome}"/>
+                  <h:outputText value="Telefone:"/>
+                  <h:outputText value="#{clienteController.selectedCliente.telefone}"/>
+                  <h:outputText value="Login:"/>
+                  <h:outputText value="#{clienteController.selectedCliente.login}"/>
+                  <h:outputText value="Senha:"/>
+                  <h:outputText value="#{clienteController.selectedCliente.senha}"/>
+             
+                    
+                    </p:panelGrid>
+                <p:commandButton value="Fechar" oncomplete="PF('widDialVisualizaCliente').hide()"/>
+            </p:dialog>
+                
+        </h:form>
+    </h:body>
+</html>
