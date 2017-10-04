@@ -5,15 +5,22 @@
  */
 package br.edu.ifpe.negocio;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
+
 /**
  *
  * @author esdra
  */
 public class PlanoInternet {
 
+    @Id
     private int id;
+    @Column (length = 40, nullable = false)
     private String nome;
+    @Column (length = 40, nullable = false)
     private String descrição;
+    @Column (length = 15, nullable = false)
     private double valor;
 
     public PlanoInternet(String nome, String descrição, double valor, int id) {

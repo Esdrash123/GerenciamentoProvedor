@@ -6,6 +6,8 @@
 package br.edu.ifpe.negocio;
 
 import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Id;
 
 /**
  *
@@ -13,14 +15,23 @@ import java.util.Date;
  */
 public class Fatura {
 
-    private String nomeDoCliente;
+    @Id
     private int CPFDoCliente;
+    @Column (length = 40, nullable = false)
+    private String nomeDoCliente;
+    @Column (length = 40, nullable = false)
     private String nomeDoPlano;
+    @Column (length = 15, nullable = false)
     private double valor;
+    @Column (length = 10, nullable = false)
     private double valorMulta;
+    @Column (length = 10, nullable = false)
     private double valorJurosPorDia;
+    @Column (length = 12, nullable = false)
     private Date vencimento;
+    @Column (length = 12, nullable = false)
     private Date DataPagamento;
+    @Column (length = 40, nullable = false)
     private Boolean Status;
 
     public Fatura(String nomeDoCliente, int CPFDoCliente, String nomeDoPlano, double valor, double valorMulta, double valorJurosPorDia, Date vencimento, Date DataPagamento, Boolean Status) {

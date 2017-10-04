@@ -5,15 +5,22 @@
  */
 package br.edu.ifpe.negocio;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
+
 /**
  *
  * @author esdra
  */
 public class Funcionario {
 
+    @Id
     private int id;
+    @Column (length = 40, nullable = false)
     private String nome;
+    @Column (length = 20, nullable = false)
     private String login;
+    @Column (length = 20, nullable = false)
     private String senha;
 
     public Funcionario(String nome, String login, String senha, int id) {

@@ -6,6 +6,8 @@
 package br.edu.ifpe.negocio;
 
 import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Id;
 
 /**
  *
@@ -13,11 +15,17 @@ import java.util.Date;
  */
 public class Cliente {
 
+    @Id
     private int id;
+    @Column (length = 40, nullable = false)
     private String nome;
+    @Column (length = 16, nullable = false)
     private int CPFCNPJ;
+    @Column (length = 25, nullable = false)
     private String login;
+    @Column (length = 20, nullable = false)
     private String senha;
+    @Column (length = 12, nullable = false)
     private Date vencimento;
 
     public Cliente(String nome, int CPFCNPJ, String login, String senha, Date vencimento, int id) {
