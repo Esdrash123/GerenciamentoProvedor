@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <head>
+        <title>Altera Cliente</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <ui:include src="menu.xhtml"/>
+
+        <h:form id="formCadastroCliente">
+            <p:growl id="dro" life="3000"/>
+            <p:fieldset legend="Cadastro de Clientes">
+                <p:messages/>
+                <p:panelGrid columns="3">
+                    
+                    <h:outputText value="ID*:"/>
+                    <p:inputText id="txtId" value="#{clienteController.selectedCliente.id}"
+                                 required="true" requiredMessage="O campo ID é obrigatório"/>
+                    <p:message for="txtId"/>
+                    
+                    <h:outputText value="Nome*:"/>
+                    <p:inputText value="#{clienteController.selectedCliente.nome}" id="txtNome"
+                                 required="true" requiredMessage="O campo NOME é obrigatório"/>
+                    <p:message for="txtNome"/>
+                    
+                    <h:outputText value="Telefone*:"/>
+                    <p:inputText value="#{clienteController.selectedCliente.vencimento}" id="txtVencimento"
+                                 required="true" requiredMessage="O campo VENCIMENTO é obrigatório"/>
+                    <p:message for="txtTelefone"/>
+                    
+                    
+                      <h:outputText value="Login*:"/>
+                      <p:inputText value="#{clienteController.selectedCliente.login}" id="txtLogin"
+                                 required="true" requiredMessage="O campo LOGIN é obrigatório"/>
+                    <p:message for="txtLogin"/>
+                    
+                    
+                      <h:outputText value="Senha*:"/>
+                      <p:inputText value="#{clienteController.selectedCliente.senha}" id="txtSenha"
+                                 required="true" requiredMessage="O campo Senha é obrigatório"/>
+                    <p:message for="txtSenha"/>
+
+                </p:panelGrid>
+                <p:commandButton value="Alterar"
+                                 oncomplete="PF('widDialCliente').show()"/>
+            </p:fieldset>
+
+            <p:confirmDialog id="dialCliente" message="Deseja Realmente Alterar o Cliente?"
+                             visible="false" widgetVar="widDialCliente" showEffect="fade"
+                             hideEffect="explode">
+                <f:facet name="header">
+                    Atenção!
+                </f:facet>
+                <p:commandButton value="Sim" 
+                                 action="#{clienteController.alterar(clienteController.selectedCliente)}"
+                                 oncomplete="PF('widDialCliente').hide()" update="@form"/>
+                <p:commandButton value="Não" oncomplete="PF('widDialCliente').hide()"/>
+            </p:confirmDialog>
+
+        </h:form>
+    </body>
+</html>

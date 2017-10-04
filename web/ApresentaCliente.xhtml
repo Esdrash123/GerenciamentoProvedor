@@ -34,8 +34,8 @@ and open the template in the editor.
                     <h:outputText value="#{item.nome}"/>
                 </p:column>
                 
-                <p:column headerText="Telefone" >
-                    <h:outputText value="#{item.telefone}"/>
+                <p:column headerText="Vencimento" >
+                    <h:outputText value="#{item.vencimento}"/>
                 </p:column>
                 
                  <p:column headerText="Login" >
@@ -52,7 +52,7 @@ and open the template in the editor.
             <p:commandButton icon="ui-icon-search" oncomplete="PF('widDialVisualizaCliente').show()"
                              update='dialVisualizaCliente'/>
            
-            <p:commandButton icon="ui-icon-transfer-e-w" action='alteraCliente.xhtml'/>
+            <p:commandButton icon="ui-icon-transfer-e-w" action='AlteraCliente.xhtml'/>
             <p:commandButton icon="ui-icon-closethick" oncomplete="PF('widDialCliente').show()"/>
             </center>
                
@@ -77,7 +77,7 @@ and open the template in the editor.
                   <h:outputText value="Nome:"/>
                   <h:outputText value="#{clienteController.selectedCliente.nome}"/>
                   <h:outputText value="Telefone:"/>
-                  <h:outputText value="#{clienteController.selectedCliente.telefone}"/>
+                  <h:outputText value="#{clienteController.selectedCliente.vencimento}"/>
                   <h:outputText value="Login:"/>
                   <h:outputText value="#{clienteController.selectedCliente.login}"/>
                   <h:outputText value="Senha:"/>
